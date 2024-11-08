@@ -55,12 +55,15 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_mail.svg
   SvgGenImage get icMail => const SvgGenImage('assets/icons/ic_mail.svg');
 
+  /// File path: assets/icons/ic_menu.svg
+  SvgGenImage get icMenu => const SvgGenImage('assets/icons/ic_menu.svg');
+
   /// File path: assets/icons/ic_phone.svg
   SvgGenImage get icPhone => const SvgGenImage('assets/icons/ic_phone.svg');
 
   /// List of all assets
   List<SvgGenImage> get values =>
-      [icCheck, icChevron, icClose, icMail, icPhone];
+      [icCheck, icChevron, icClose, icMail, icMenu, icPhone];
 }
 
 class $AssetsImagesGen {

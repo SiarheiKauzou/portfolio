@@ -12,12 +12,18 @@ final class TextStylesExtension extends ThemeExtension<TextStylesExtension> {
   static const _baseStyle = TextStyle(
     fontFamily: FontFamily.firaCode,
     fontWeight: FontWeight.w400,
-    height: 1.2,
+    height: 1.4,
   );
 
   factory TextStylesExtension() => TextStylesExtension._(
-        headline: _baseStyle.copyWith(fontSize: 62),
-        subheadline: _baseStyle.copyWith(fontSize: 32),
+        headline: _baseStyle.copyWith(
+          fontSize: 62,
+          height: 1,
+        ),
+        subheadline: _baseStyle.copyWith(
+          fontSize: 32,
+          height: 1.2,
+        ),
         body: _baseStyle.copyWith(fontSize: 18),
         label: _baseStyle.copyWith(fontSize: 16),
         codeSnippet: _baseStyle.copyWith(fontSize: 14),

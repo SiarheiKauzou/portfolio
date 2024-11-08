@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       primary: false,
       body: AppFrame(
         child: Scaffold(
-          appBar: HomeAppBar(),
+          appBar: HomeAppBar.menu(),
           body: AutoRouter(),
         ),
       ),

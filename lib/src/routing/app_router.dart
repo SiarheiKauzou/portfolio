@@ -13,6 +13,15 @@ class AppRouter extends RootStackRouter {
               initial: true,
               page: WelcomeRoute.page,
             ),
+            AutoRoute(
+              page: AboutMeRoute.page,
+            ),
+            AutoRoute(
+              page: ProjectsRoute.page,
+            ),
+            AutoRoute(
+              page: ContactMeRoute.page,
+            ),
           ],
         ),
       ];

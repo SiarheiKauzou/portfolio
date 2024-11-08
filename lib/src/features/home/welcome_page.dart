@@ -24,21 +24,21 @@ class WelcomePage extends StatelessWidget {
                 children: [
                   kGH32,
                   Text(
-                    'Hi all. I am',
+                    'Hi all. I am'.hardcoded,
                     style: context.textStyles.body.copyWith(
                       color: context.colors.secondaryFourth,
                     ),
                   ),
                   kGH8,
                   Text(
-                    'Sergey Kovzov',
+                    'Sergey Kovzov'.hardcoded,
                     style: context.textStyles.headline.copyWith(
                       color: context.colors.secondaryFourth,
                     ),
                   ),
                   kGH4,
                   Text(
-                    '> Flutter developer',
+                    '> Flutter developer'.hardcoded,
                     style: context.textStyles.body.copyWith(
                       color: context.colors.accentSecond,
                     ),
@@ -52,7 +52,7 @@ class WelcomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '// find my profile on Github:',
+                    '// find my profile on Github:'.hardcoded,
                     style: context.textStyles.codeSnippet.copyWith(
                       color: context.colors.secondaryFirst,
                     ),
@@ -66,25 +66,25 @@ class WelcomePage extends StatelessWidget {
                     TextSpan(
                       children: [
                         TextSpan(
-                          text: 'const ',
+                          text: 'const '.hardcoded,
                           style: TextStyle(
                             color: context.colors.secondaryThird,
                           ),
                         ),
                         TextSpan(
-                          text: 'githubLink ',
+                          text: 'githubLink '.hardcoded,
                           style: TextStyle(
                             color: context.colors.accentSecond,
                           ),
                         ),
                         TextSpan(
-                          text: '= ',
+                          text: '= '.hardcoded,
                           style: TextStyle(
                             color: context.colors.secondaryFourth,
                           ),
                         ),
                         TextSpan(
-                          text: '“https://github.com/SiarheiKauzou”',
+                          text: '“https://github.com/SiarheiKauzou”'.hardcoded,
                           style: TextStyle(
                             color: context.colors.accentThird,
                           ),

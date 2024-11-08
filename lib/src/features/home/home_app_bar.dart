@@ -1,7 +1,12 @@
 import 'package:portfolio/src/app_exports.dart';
+import 'package:portfolio/src/features/home/menu.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppBar({super.key});
+  const HomeAppBar.menu({super.key}) : _isShowClose = false;
+
+  const HomeAppBar.close({super.key}) : _isShowClose = true;
+
+  final bool _isShowClose;
 
   @override
   Size get preferredSize => const Size.fromHeight(56);
@@ -9,9 +14,14 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: preferredSize.height,
-      padding: const EdgeInsets.all(kP16),
+      padding: const EdgeInsets.only(
+        left: kP16,
+        right: kP8,
+      ),
+      constraints: BoxConstraints(
+        minWidth: double.infinity,
+        minHeight: preferredSize.height,
+      ),
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
@@ -21,13 +31,42 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       child: Row(
         children: [
-          Text(
-            'sergey-kovzov',
-            style: context.textStyles.label.copyWith(
-              color: context.colors.secondaryFirst,
+          Expanded(
+            child: Text(
+              'sergey-kovzov',
+              style: context.textStyles.label.copyWith(
+                color: context.colors.secondaryFirst,
+              ),
             ),
           ),
+          if (_isShowClose)
+            IconButton(
+              icon: Assets.icons.icClose.svg(),
+              onPressed: context.router.maybePop,
+            )
+          else
+            IconButton(
+              icon: Assets.icons.icMenu.svg(),
+              onPressed: () => Menu.show(context),
+            ),
         ],
+      ),
+    );
+  }
+}
+
+class _Menu extends StatelessWidget {
+  const _Menu();
+
+  @override
+  Widget build(BuildContext context) {
+    return const AppFrame(
+      isShowBackground: false,
+      child: Scaffold(
+        appBar: HomeAppBar.close(),
+        body: Column(
+          children: [],
+        ),
       ),
     );
   }

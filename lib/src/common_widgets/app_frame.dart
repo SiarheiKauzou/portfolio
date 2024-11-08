@@ -1,13 +1,14 @@
 import 'package:portfolio/src/app_exports.dart';
-import 'package:portfolio/src/generated/assets.gen.dart';
 
 class AppFrame extends StatelessWidget {
   const AppFrame({
     required this.child,
+    this.isShowBackground = true,
     super.key,
   });
 
   final Widget child;
+  final bool isShowBackground;
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +23,12 @@ class AppFrame extends StatelessWidget {
             ),
           ),
         ),
-        Assets.images.backgroundBlurs.image(
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.cover,
-        ),
+        if (isShowBackground)
+          Assets.images.backgroundBlurs.image(
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.cover,
+          ),
         SafeArea(
           child: Container(
             margin: const EdgeInsets.all(kP16),
