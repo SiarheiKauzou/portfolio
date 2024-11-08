@@ -12,6 +12,7 @@ final class TextStylesExtension extends ThemeExtension<TextStylesExtension> {
   static const _baseStyle = TextStyle(
     fontFamily: FontFamily.firaCode,
     fontWeight: FontWeight.w400,
+    height: 1.2,
   );
 
   factory TextStylesExtension() => TextStylesExtension._(

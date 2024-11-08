@@ -1,5 +1,5 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:portfolio/src/app_exports.dart';
+import 'package:portfolio/src/features/home/home_app_bar.dart';
 
 @RoutePage()
 class HomeScreen extends StatelessWidget {
@@ -7,6 +7,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      primary: false,
+      body: AppFrame(
+        child: Scaffold(
+          appBar: HomeAppBar(),
+          body: AutoRouter(),
+        ),
+      ),
+    );
   }
 }

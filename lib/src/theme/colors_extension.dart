@@ -2,6 +2,7 @@ part of 'app_theme.dart';
 
 class ColorsExtension extends ThemeExtension<ColorsExtension> {
   const ColorsExtension._({
+    required this.transparent,
     required this.primaryFirst,
     required this.primarySecond,
     required this.primaryThird,
@@ -19,6 +20,7 @@ class ColorsExtension extends ThemeExtension<ColorsExtension> {
   });
 
   factory ColorsExtension.light() => const ColorsExtension._(
+        transparent: Colors.transparent,
         primaryFirst: Color(0xFF01080E),
         primarySecond: Color(0xFF011627),
         primaryThird: Color(0xFF011221),
@@ -35,6 +37,7 @@ class ColorsExtension extends ThemeExtension<ColorsExtension> {
         gradientsSecond: Color(0xFF43D9AD),
       );
 
+  final Color transparent;
   final Color primaryFirst;
   final Color primarySecond;
   final Color primaryThird;
@@ -66,6 +69,7 @@ class ColorsExtension extends ThemeExtension<ColorsExtension> {
     Color? lines,
     Color? gradientsFirst,
     Color? gradientsSecond,
+    Color? transparent,
   }) =>
       ColorsExtension._(
         primaryFirst: primaryFirst ?? this.primaryFirst,
@@ -82,6 +86,7 @@ class ColorsExtension extends ThemeExtension<ColorsExtension> {
         lines: lines ?? this.lines,
         gradientsFirst: gradientsFirst ?? this.gradientsFirst,
         gradientsSecond: gradientsSecond ?? this.gradientsSecond,
+        transparent: transparent ?? this.transparent,
       );
 
   @override
@@ -117,6 +122,7 @@ class ColorsExtension extends ThemeExtension<ColorsExtension> {
           Color.lerp(gradientsFirst, other.gradientsFirst, t) ?? gradientsFirst,
       gradientsSecond: Color.lerp(gradientsSecond, other.gradientsSecond, t) ??
           gradientsSecond,
+      transparent: Color.lerp(transparent, other.transparent, t) ?? transparent,
     );
   }
 }
